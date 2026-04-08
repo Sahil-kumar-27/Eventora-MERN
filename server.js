@@ -40,7 +40,7 @@ app.use("/api/bookings", bookingRoutes);
 app.use(express.static(path.join(__dirname, "public")));
 
 // ================= React SPA Fallback =================
-app.get("*", (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
